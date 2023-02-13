@@ -1,0 +1,117 @@
+.progress {
+  max-width: 500px;
+  height: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+.progress .progressValue {
+  /* width: 10%; */
+  height: 20px;
+  background-color: #2ec7a6;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.questionBox {
+  max-width: 420px;
+  max-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 25px #dde2e8;
+  background-color: #ffffff;
+}
+
+.number {
+  margin-bottom: 30px;
+  font-weight: 900;
+  font-size: 60px;
+  text-align: center;
+  color: #2ec7a6;
+}
+
+.question {
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.choice {
+  border-radius: 120px;
+  font-size: 22px;
+}
+
+.btn {
+  max-width: 500px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 35px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.4;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.1s;
+}
+
+.btnGray {
+  background-color: #f2f4f6;
+  box-shadow: 0 14px 0 #dfe1e2;
+  color: #444444;
+}
+
+.btnGray:active {
+  box-shadow: 0 4px 0 #dfe1e2;
+  transform: translateY(10px);
+}
+
+/* .questionBox .number {
+  margin-bottom: 30px;
+  font-weight: 900;
+  font-size: 60px;
+  text-align: center;
+  color: #2ec7a6;
+}
+.questionBox .question {
+  margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.5;
+  text-align: center;
+}
+.questionBox .choice {
+  border-radius: 120px;
+  font-size: 22px;
+} */
+
+@media (max-width: 640px) {
+  .progress {
+    margin-bottom: 30px;
+  }
+  .questionBox {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .questionBox .question {
+    font-size: 28px;
+  }
+  .questionBox .choice {
+    font-size: 20px;
+  }
+}
