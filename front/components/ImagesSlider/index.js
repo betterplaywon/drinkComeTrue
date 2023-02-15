@@ -1,10 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.min.css";
-import "swiper/swiper.min.css";
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { backUrl } from '../../config/config';
+import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper.min.css';
 // import 'swiper/components/navigation/navigation.min.css';
 // import 'swiper/components/pagination/pagination.min.css';
 
@@ -23,9 +24,9 @@ const ImagesSlider = ({ images }) => {
             <SwiperSlide key={idx}>
               <div>
                 <img
-                  style={{ width: "50%", display: "inline-block" }}
-                  src={`${process.env.NEXT_PUBLIC_BASE_URL}/${drinkImage.src}`}
-                  alt={`${process.env.NEXT_PUBLIC_BASE_URL}/${drinkImage.src}`}
+                  style={{ width: '50%', display: 'inline-block' }}
+                  src={`${backUrl}/${drinkImage.src}`}
+                  alt={`${backUrl}/${drinkImage.src}`}
                 />
               </div>
             </SwiperSlide>

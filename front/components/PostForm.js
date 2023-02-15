@@ -3,6 +3,7 @@ import { Button, Form, Input } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import useInput from '../hooks/useInput';
 import * as AT from '../actionType';
+import { backUrl } from '../config/config';
 
 const PostForm = () => {
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ const PostForm = () => {
   const [text, handleText, setText] = useInput('');
 
   const { TextArea } = Input;
-  const { imagePaths, addPostLoading, addPostDone } = useSelector(state => state.post);
+  const { imagePaths, addPostLoading, addPostDone } = useSelector((state) => state.post);
 
   useEffect(() => {
     if (addPostDone) {
@@ -20,7 +21,7 @@ const PostForm = () => {
 
   const handleSubmit = useCallback(() => {
     const formData = new FormData();
-    imagePaths.forEach(m => {
+    imagePaths.forEach((m) => {
       formData.append('image', m);
     });
     formData.append('content', text);
@@ -31,9 +32,9 @@ const PostForm = () => {
     });
   }, [text, imagePaths]);
 
-  const onChangeImages = useCallback(e => {
+  const onChangeImages = useCallback((e) => {
     const imageFormData = new FormData();
-    [].forEach.call(e.target.files, f => {
+    [].forEach.call(e.target.files, (f) => {
       imageFormData.append('image', f);
     });
     dispatch({
@@ -47,7 +48,7 @@ const PostForm = () => {
   }, [imageInput.current]);
 
   const onRemoveImages = useCallback(
-    imageIdx => () => {
+    (imageIdx) => () => {
       dispatch({
         type: AT.IMAGE_REMOVE,
         data: imageIdx,
@@ -83,11 +84,7 @@ const PostForm = () => {
       <div style={{ background: '#fcfcfc61', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         {imagePaths?.map((image, idx) => (
           <div key={image.id}>
-            <img
-              src={`${process.env.NEXT_PUBLIC_BASE_URL}/${image}`}
-              alt="postImages"
-              style={{ width: '25%', display: 'inline-block' }}
-            />
+            <img src={`${backUrl}/${image}`} alt="postImages" style={{ width: '25%', display: 'inline-block' }} />
 
             <div>
               <Button onClick={onRemoveImages(idx)}>사진 제거</Button>
