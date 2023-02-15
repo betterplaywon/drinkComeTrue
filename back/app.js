@@ -45,7 +45,7 @@ app.use(
     origin: [
       "http://localhost:3060",
       "DrinkComeTrue.com",
-      "http://54.180.91.206",
+      "http://3.38.95.109",
     ],
     credentials: true,
   })
