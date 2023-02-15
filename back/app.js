@@ -42,7 +42,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // FE에서 보낸 데이터를 req.body에 넣어주겠다
 app.use(
   cors({
-    origin: ["http://localhost:3060", "DrinkComeTrue.com"],
+    origin: [
+      "http://localhost:3060",
+      "DrinkComeTrue.com",
+      "http://54.180.91.206",
+    ],
     credentials: true,
   })
 );
